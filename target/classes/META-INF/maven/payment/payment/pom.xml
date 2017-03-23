@@ -1,0 +1,294 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>payment</groupId>
+  <artifactId>payment</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+ 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<hibernate-validator-version>5.1.3.Final</hibernate-validator-version>
+		<simple-json-version>1.1.1</simple-json-version>
+		<commons-fileupload>1.3.2</commons-fileupload>
+		<commons-lang3.version>3.0</commons-lang3.version>
+		<jackson.version>2.7.4</jackson.version>
+		<commons-io.version>2.5</commons-io.version>
+		
+		<geoip2.version>2.7.0</geoip2.version>
+		<javax.inject.version>1</javax.inject.version>
+		<javax.el.version>2.2.4</javax.el.version>
+		<drools.version>5.6.0.Final</drools.version>
+		<jackson-version>2.7.4</jackson-version>
+		
+		<java.version>1.8</java.version>        
+        <shopizer.version>2.0.5-SNAPSHOT</shopizer.version>
+        <shopizer.search.version>2.0.5-SNAPSHOT</shopizer.search.version>
+        <shopizer-canadapost.version>2.0.5-SNAPSHOT</shopizer-canadapost.version>
+		<shopizer-shipping-distance.version>2.0.5-SNAPSHOT</shopizer-shipping-distance.version>	
+        <jackson-version>2.7.4</jackson-version>
+
+        <commons-collections4.version>4.0</commons-collections4.version>
+        <commons-validator.version>1.5.1</commons-validator.version>
+        <org.apache.httpcomponent.version>4.5.2</org.apache.httpcomponent.version>
+        <javax.inject.version>1</javax.inject.version>
+		<javax.el.version>2.2.4</javax.el.version>
+		<javax.servlet-api-version>3.0.1</javax.servlet-api-version>
+		<!-- external systems -->
+		<c3p0-version>0.9.5.2</c3p0-version>
+		<org.elasticsearch-version>2.4.1</org.elasticsearch-version>
+		<infinispan.version>6.0.2.Final</infinispan.version>
+		<mysql-jdbc-version>5.1.40</mysql-jdbc-version>
+		<simple-json-version>1.1.1</simple-json-version>
+		
+	</properties>
+		
+		<dependencies>
+
+		<!-- H2 DB -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>${commons-collections4.version}</version>
+		</dependency>
+		
+				<!-- Jackson JSON Processor -->
+				<dependency>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-databind</artifactId>
+				    <version>${jackson-version}</version>
+				</dependency>
+				
+				<dependency>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-core</artifactId>
+				    <version>${jackson-version}</version>
+				</dependency>
+				 
+				<dependency>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-annotations</artifactId>
+				    <version>${jackson-version}</version>
+				</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
+		<dependency>
+		    <groupId>commons-validator</groupId>
+		    <artifactId>commons-validator</artifactId>
+		    <version>${commons-validator.version}</version>
+
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+				
+
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>${org.apache.httpcomponent.version}</version>
+		</dependency>
+		
+
+		<!-- Payment dependencies -->
+		<dependency>
+			<groupId>com.paypal.sdk</groupId>
+			<artifactId>merchantsdk</artifactId>
+			<version>2.6.109</version>
+		</dependency>
+		
+		
+		<dependency>
+			 <groupId>com.stripe</groupId>
+			 <artifactId>stripe-java</artifactId>
+			 <version>1.33.0</version>
+		</dependency>	
+		
+		<!-- Spring Data JPA-->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        
+        <!-- For transient Multipart File only -->
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+        
+        <!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>${hibernate-validator-version}</version>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.24</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>3.0.2.RELEASE</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.0.0.Final</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+    <version>5.0.0.Final</version>
+</dependency>
+
+		 <!-- http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>${simple-json-version}</version>
+		</dependency>
+		
+		<!-- http://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commons-io.version}</version>
+		</dependency>
+				
+
+		<!-- http://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>${commons-fileupload}</version>
+		</dependency>
+		
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.version}</version>
+		</dependency>
+		<!-- http://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>${commons-lang3.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>${javax.inject.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>1.1.0.Final</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.5</version>
+		</dependency>
+		
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-jdbc-version}</version>
+		</dependency>
+
+				<!-- Jackson JSON Processor -->
+				<dependency>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-databind</artifactId>
+				    <version>${jackson-version}</version>
+				</dependency>
+				
+				<dependency>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-core</artifactId>
+				    <version>${jackson-version}</version>
+				</dependency>
+				 
+				<dependency>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-annotations</artifactId>
+				    <version>${jackson-version}</version>
+				</dependency>
+						
+
+        <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0-version}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${org.elasticsearch-version}</version>
+		</dependency>	
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>javax.mail-api</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.7</version>
+		</dependency>
+		
+		<!-- http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>${simple-json-version}</version>
+		</dependency>	
+		</dependencies>
+</project>
